@@ -16,5 +16,5 @@ abstract public class Cuenta {
     public int Numero(){return numero_cuenta;}
     public abstract void Girar ( float cantidad );
     public abstract void Depositar ( float cantidad );
-    public abstract void Imprimir();    
+    public abstract void Imprimir();   
 }

@@ -20,11 +20,9 @@ public class Banco {
 			this.numero_actual_de_cuentas+=1;
         }
 	}
-	/*public void Eliminar(int numero_cuenta ){
-	    // Elimina la cuenta de numero numero_cuenta
-        System.out.println("Numero de cuenta");
-        numero_cuenta cuenta = new numero_cuenta();
-    }*/
+	//public void Eliminar(int numero_cuenta ){ 
+        
+    //}
 	public int Numero_cuentas_saldo( float min , float max){return 0;}	
 	    // Imprime toda la informacion de las cuentas cuyo saldo
 	    // esta entre min y max ( ambos inclusive )
