@@ -7,7 +7,8 @@ abstract public class Cuenta {
         this.nombre = nombre;
         this.rut = rut;
 		this.numero_cuenta = rut/2*5;
-		this.saldo = 0;
+		this.saldo = 0.0f;
+        System.out.println(toString());
 	}
     public int Rut(){return rut;}
     public String Nombre(){return nombre;}
@@ -15,5 +16,5 @@ abstract public class Cuenta {
     public int Numero(){return numero_cuenta;}
     public abstract void Girar ( float cantidad );
     public abstract void Depositar ( float cantidad );
-    public abstract void Imprimir();
+    public abstract void Imprimir();    
 }

@@ -11,6 +11,8 @@ public class CuentaVista extends Cuenta{
     public void Depositar(float cantidad) {}
     @Override
     public void Imprimir() {}
+    public String toString(){
+        return "Nombre: "+nombre+"\nNumero de cuenta: "+numero_cuenta+"\nsaldo: "+saldo+"\n";
+    }
 
-	
 }
