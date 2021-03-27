@@ -12,7 +12,7 @@ public class CuentaVista extends Cuenta{
     @Override
     public void Imprimir() {}
     public String toString(){
-        return "Nombre: "+nombre+"\nNumero de cuenta: "+numero_cuenta+"\nsaldo: "+saldo+"\n";
+        return "Cuenta vista\nNombre: "+nombre+"\nNumero de cuenta: "+numero_cuenta+"\nsaldo: "+saldo+"\n";
     }
 
 }

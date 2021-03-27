@@ -8,21 +8,27 @@ public class Banco {
 		// tipo_cuenta == 1 significa que es una cuenta corriente
 		// El saldo inicial es 0
 		if (tipo_cuenta == 0){
-			System.out.println("Cuenta ahorro creada: ");
+			//System.out.println("Cuenta ahorro creada: ");
 			CuentaAhorro nuevaCuenta = new CuentaAhorro(rut, nombre);
 			cuentas.add(nuevaCuenta);
 			this.numero_actual_de_cuentas+=1;
             
         }else if(tipo_cuenta == 1){
-			System.out.println("Cuenta vista creada: ");
+			//System.out.println("Cuenta vista creada: ");
             CuentaVista nuevaCuenta = new CuentaVista(rut, nombre);
 			cuentas.add(nuevaCuenta);
 			this.numero_actual_de_cuentas+=1;
         }
 	}
-	//public void Eliminar(int numero_cuenta ){ 
-        
-    //}
+	public void Eliminar(int numero_cuenta ){ 
+		for (int i =0 ; i<cuentas.size(); i++){
+			if(cuentas.get(i).Numero() == numero_cuenta){
+				cuentas.remove(i);
+				this.numero_actual_de_cuentas-=1;
+				break;
+			}
+		}
+    }
 	public int Numero_cuentas_saldo( float min , float max){return 0;}	
 	    // Imprime toda la informacion de las cuentas cuyo saldo
 	    // esta entre min y max ( ambos inclusive )
@@ -35,7 +41,7 @@ public class Banco {
 		return cuenta;
 		}*/
 	// retorna la cuenta de la cuenta con numero_cuenta
-	public String getCuentas(int i){
+	public String getCuenta(int i){
 		return cuentas.get(i).toString();
 	}
 	public int getNmroCuentas(){
