@@ -2,7 +2,10 @@ import java.util.*;
 
 public class Banco {
 	private ArrayList<Cuenta> ctas = new ArrayList<Cuenta>();
-	private int numero_actual_de_cuentas = 0;
+	private int numero_actual_de_cuentas;
+	public Banco(){
+		this.numero_actual_de_cuentas = 0;
+	}
 	public void Agregar(int tipo_cuenta , int rut , String nombre ){
 		// tipo_cuenta == 0 significa que es una cuenta de ahorro
 		// tipo_cuenta == 1 significa que es una cuenta vista
@@ -20,17 +23,19 @@ public class Banco {
 			this.numero_actual_de_cuentas+=1;
         }
 	}
-	public void Eliminar(int numero_cuenta ){ 
-		for (int i =0 ; i<ctas.size(); i++){
+	public boolean Eliminar(int numero_cuenta ){ 
+		for (int i = 0 ; i<ctas.size(); i++){
+			System.out.println("Entrada: "+i+"al for");
 			if(ctas.get(i).Numero() == numero_cuenta){
 				System.out.println("Se ha eliminado La siguiente cuenta:"+
 				                   "\n"+ctas.get(i).toString());
 				ctas.remove(i);
 				this.numero_actual_de_cuentas-=1;
-				break;
+				return true;
 			}
 		}
 		System.out.println("Cuenta no encontrada");
+		return false;
     }
 	public int Numero_cuentas_saldo( float min , float max){return 0;}	
 	    // Imprime toda la informacion de las cuentas cuyo saldo

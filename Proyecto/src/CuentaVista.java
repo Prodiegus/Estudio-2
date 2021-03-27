@@ -9,7 +9,8 @@ public class CuentaVista extends Cuenta{
             this.numero_cuenta = rut/2*5;
             System.out.println(toString());
         }
-    
+        @Override
+        public int Numero() {return this.numero_cuenta;}
         @Override
         public void Girar(float cantidad) {
             this.saldo-=(cantidad+300);

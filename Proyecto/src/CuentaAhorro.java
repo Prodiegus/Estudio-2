@@ -8,7 +8,8 @@ public class CuentaAhorro extends Cuenta{
             this.numero_cuenta = rut/3*5;
             System.out.println(toString());
         }
-    
+        @Override
+        public int Numero() {return this.numero_cuenta;}
         @Override
         public void Girar(float cantidad) {
             this.saldo-=(cantidad+cantidad*0.03);

@@ -6,12 +6,13 @@ abstract public class Cuenta {
     public Cuenta(int rut , String nombre ){
         this.nombre = nombre;
         this.rut = rut;
+        this.numero_cuenta = rut/4*5;
 		this.saldo = 0.0f;
 	}
     public int Rut(){return rut;}
     public String Nombre(){return nombre;}
     public float Saldo(){return saldo;}
-    public int Numero(){return numero_cuenta;}
+    public abstract int Numero();
     public abstract void Girar ( float cantidad );
     public abstract void Depositar ( float cantidad );
     public abstract void Imprimir();    
