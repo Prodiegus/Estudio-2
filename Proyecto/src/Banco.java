@@ -9,10 +9,12 @@ public class Banco {
 		if (tipo_cuenta == 0){
 			CuentaAhorro nuevaCuenta = new CuentaAhorro(rut, nombre);
             System.out.println("cuenta de ahorro creada");
+			this.numero_actual_de_cuentas+=1;
             
         }else if(tipo_cuenta == 1){
             System.out.println("cuenta vista creada");
             CuentaVista nuevaCuenta = new CuentaVista(rut, nombre);
+			this.numero_actual_de_cuentas+=1;
         }
 	}
 	/*public void Eliminar(int numero_cuenta ){
