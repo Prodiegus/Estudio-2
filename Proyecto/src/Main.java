@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-import jdk.nashorn.api.tree.WhileLoopTree;
-
 class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner lectura = new Scanner(System.in);
@@ -27,11 +25,10 @@ class Main {
             	case 2:
 					eliminarCuenta(adminBanco);
             	break;
-				
-			}
+		  }
 			System.out.print("Oprima 1 para salir: ");
 		}
-  	}
+  }
 	public static void crearCuenta(Banco adminBanco){ 
 		Scanner lectura = new Scanner(System.in);
 		System.out.println("Usted a ingresado al menu de creacion de cuentas:");
@@ -40,16 +37,11 @@ class Main {
 		                +"\n3.-Nombre Usuario(Nombre Apellido)\n");
 		adminBanco.Agregar(lectura.nextInt(),lectura.nextInt(),(lectura.next()+" "+lectura.next()));
 		System.out.println("\n");
-		lectura.close();
-
-    }
+  }
 	public static void eliminarCuenta(Banco adminBanco){
 		Scanner lectura = new Scanner(System.in);
 		System.out.println("Usted a ingresado a la opcion de eliminar cuenta: \n\n");
     	System.out.print("Indique el numero de cuenta que desea eliminar: ");
 	    adminBanco.Eliminar(lectura.nextInt());
-		lectura.close();
-
 	}
-
 }
