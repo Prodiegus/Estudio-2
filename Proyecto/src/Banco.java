@@ -1,9 +1,10 @@
 import java.util.*;
 
 public class Banco {
-	private ArrayList<Cuenta> ctas = new ArrayList<Cuenta>();
+	private ArrayList<Cuenta> ctas;
 	private int numero_actual_de_cuentas;
 	public Banco(){
+		this.ctas = new ArrayList<Cuenta>();
 		this.numero_actual_de_cuentas = 0;
 	}
 	public void Agregar(int tipo_cuenta , int rut , String nombre ){
@@ -13,23 +14,24 @@ public class Banco {
 		if (tipo_cuenta == 0){
 			//System.out.println("Cuenta ahorro creada: ");
 			CuentaAhorro nuevaCuenta = new CuentaAhorro(rut, nombre);
-			ctas.add(nuevaCuenta);
+			this.ctas.add(nuevaCuenta);
 			this.numero_actual_de_cuentas+=1;
             
         }else if(tipo_cuenta == 1){
 			//System.out.println("Cuenta vista creada: ");
             CuentaVista nuevaCuenta = new CuentaVista(rut, nombre);
-			ctas.add(nuevaCuenta);
+			this.ctas.add(nuevaCuenta);
 			this.numero_actual_de_cuentas+=1;
         }
 	}
 	public boolean Eliminar(int numero_cuenta ){ 
+		//System.out.println("tamano de el array: "+ctas.size());
 		for (int i = 0 ; i<ctas.size(); i++){
 			System.out.println("Entrada: "+i+"al for");
 			if(ctas.get(i).Numero() == numero_cuenta){
 				System.out.println("Se ha eliminado La siguiente cuenta:"+
-				                   "\n"+ctas.get(i).toString());
-				ctas.remove(i);
+									"\n"+ctas.get(i).toString());
+				this.ctas.remove(i);
 				this.numero_actual_de_cuentas-=1;
 				return true;
 			}
