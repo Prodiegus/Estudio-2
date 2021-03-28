@@ -25,11 +25,9 @@ public class Banco {
         }
 	}
 	public boolean Eliminar(int numero_cuenta ){ 
-		//System.out.println("tamano de el array: "+ctas.size());
 		for (int i = 0 ; i<ctas.size(); i++){
-			System.out.println("Entrada: "+i+"al for");
 			if(ctas.get(i).Numero() == numero_cuenta){
-				System.out.println("Se ha eliminado La siguiente cuenta:"+
+				System.out.println("\nSe ha eliminado La siguiente cuenta:"+
 									"\n"+ctas.get(i).toString());
 				this.ctas.remove(i);
 				this.numero_actual_de_cuentas-=1;
