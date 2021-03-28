@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-import jdk.nashorn.api.tree.WhileLoopTree;
-
 class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner lectura = new Scanner(System.in);
@@ -13,8 +11,8 @@ class Main {
     	adminBanco.Agregar(0, 19786394, "Maria Santander");
     	adminBanco.Agregar(1, 16128754, "Claudio Guajardo");
 
-		System.out.println("Menu de creacion de cuentas Administracion de Cuentas: \noprima ctrl+c para salir del programa");
-		while(true){
+		System.out.println("Menu de creacion de cuentas Administracion de Cuentas: \n");
+		for(int i = 0; i!=1;i = lectura.nextInt()){
 			System.out.println("\n Oprima la siguente tecla dependiendo de la accion que quiera realizar\n"+
 								"1.- Crear una cuenta\n"+
 								"2.- Eliminar una cuenta\n"+
@@ -29,18 +27,18 @@ class Main {
             	break;
 				
 			}
-			System.out.print("Oprima 1 para salir: ");
+			System.out.print("Oprima 1 para salir, otro entero para seguir: ");
 		}
   	}
 	public static void crearCuenta(Banco adminBanco){ 
 		Scanner lectura = new Scanner(System.in);
 		System.out.println("Usted a ingresado al menu de creacion de cuentas:");
 	    System.out.println("Ingrese los dados de la cuenta en el siguente orden:"
-                        +"\n1.-tipocuenta[0/1](0 = Cuenta ahorro y 1 = Cuenta vista)"	                      +"\n2.-Rut Usuario"
+                        +"\n1.-tipocuenta[0/1](0 = Cuenta ahorro y 1 = Cuenta vista)"
+						+"\n2.-Rut Usuario"
 		                +"\n3.-Nombre Usuario(Nombre Apellido)\n");
 		adminBanco.Agregar(lectura.nextInt(),lectura.nextInt(),(lectura.next()+" "+lectura.next()));
 		System.out.println("\n");
-		lectura.close();
 
     }
 	public static void eliminarCuenta(Banco adminBanco){
@@ -48,7 +46,6 @@ class Main {
 		System.out.println("Usted a ingresado a la opcion de eliminar cuenta: \n\n");
     	System.out.print("Indique el numero de cuenta que desea eliminar: ");
 	    adminBanco.Eliminar(lectura.nextInt());
-		lectura.close();
 
 	}
 
