@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+import jdk.nashorn.api.tree.WhileLoopTree;
+
 class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner lectura = new Scanner(System.in);
@@ -11,9 +13,8 @@ class Main {
     	adminBanco.Agregar(0, 19786394, "Maria Santander");
     	adminBanco.Agregar(1, 16128754, "Claudio Guajardo");
 
-		System.out.println("Menu de creacion de cuentas Administracion de Cuentas: \noprima 1 despues de realizar una operacion para salir"
-		+"\n para continuar creando oprima cualquier numero entero");
-		for (int i = 0; i!=1; i = lectura.nextInt()){
+		System.out.println("Menu de creacion de cuentas Administracion de Cuentas: \noprima ctrl+c para salir del programa");
+		while(true){
 			System.out.println("\n Oprima la siguente tecla dependiendo de la accion que quiera realizar\n"+
 								"1.- Crear una cuenta\n"+
 								"2.- Eliminar una cuenta\n"+
@@ -26,14 +27,12 @@ class Main {
             	case 2:
 					eliminarCuenta(adminBanco);
             	break;
-
+				
 			}
 			System.out.print("Oprima 1 para salir: ");
-
 		}
-		lectura.close();
   	}
-  	public static void crearCuenta(Banco adminBanco){ 
+	public static void crearCuenta(Banco adminBanco){ 
 		Scanner lectura = new Scanner(System.in);
 		System.out.println("Usted a ingresado al menu de creacion de cuentas:");
 	    System.out.println("Ingrese los dados de la cuenta en el siguente orden:"
