@@ -69,20 +69,18 @@ class Main {
 
 	}
   public static void depositar(Banco adminBanco){
-    Scanner lectura = new Scanner(System.in);
-    System.out.println("Usted ha ingresado a la opcion de depositar: \n\n");
-    System.out.print("Porfavor indique el monto y numero de cuenta (recuerde el espacio): ");
-    adminBanco.deposito(lectura.nextFloat(),lectura.nextInt());
+      Scanner lectura = new Scanner(System.in);
+      System.out.println("Usted ha ingresado a la opcion de depositar: \n\n");
+      System.out.print("Porfavor indique el monto y numero de cuenta (recuerde el espacio): ");
+      adminBanco.deposito(lectura.nextFloat(),lectura.nextInt());
 
 
 
   }
   public static void girar(Banco adminBanco){
-    Scanner lectura = new Scanner(System.in);
-
-
-
-
-
+      Scanner lectura = new Scanner(System.in);
+      System.out.println("Usted ha ingresado a la opcion de giro: \n\n");
+      System.out.print("Porfavor indique el monto a girar y numero de cuenta(recuer5de el espacio): ");
+      adminBanco.giro(lectura.nextFloat(),lectura.nextInt());
   }
 }

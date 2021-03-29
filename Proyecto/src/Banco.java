@@ -52,12 +52,24 @@ public class Banco {
 		for(int i = 0; i<ctas.size();i++){
 			if(ctas.get(i).Numero() == numero_cuenta){
 				ctas.get(i).Depositar(cantidad);
-				System.out.println("\n\nSe ha depositado: \n"+
+				System.out.println("\n\nSe ha depositado: "+cantidad+"\n"+
 				ctas.get(i).toString());
 				return true;
 			}
 		}
 		System.out.println("No se ha podido realizar el deposito por motivos no encontrados");
+		return false;
+	}
+	public boolean giro(float cantidad, int numero_cuentas){
+		for(int i = 0; i<ctas.size(); i++){
+			if(ctas.get(i).Numero()== numero_cuentas){
+				ctas.get(i).Girar(cantidad);
+				System.out.println("\n\nSe ha girado: "+cantidad+"\n"+
+				ctas.get(i).toString());
+				return true;
+			}
+		}
+		System.out.println("No se ha podido realizar el giro por motivos no encontrados");
 		return false;
 	}
 	public int Numero_cuentas_saldo( float min , float max){return 0;}	
