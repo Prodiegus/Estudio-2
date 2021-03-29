@@ -16,10 +16,19 @@ public class CuentaVista extends Cuenta{
             this.saldo-=(cantidad+300);
         }
         @Override
-        public void Depositar(float cantidad) {}
+        public void Depositar(float cantidad) {
+            if(cantidad>1000000){
+                this.saldo+=cantidad;
+            }else{
+                System.out.println("Usted excedio el limite de deposito");
+            }
+        }
         @Override
         public void Imprimir() {}
         public String toString(){
-            return "Cuenta vista\nNombre: "+nombre+"\nNumero de cuenta: "+numero_cuenta+"\nsaldo: "+saldo+"\n";
+            return "Cuenta vista\nNombre: "+nombre
+                    +"\nNumero de cuenta: "
+                    +numero_cuenta+"\nsaldo: "
+                    +saldo+"\n";
         }
     }
