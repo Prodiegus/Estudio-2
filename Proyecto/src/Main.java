@@ -16,7 +16,9 @@ class Main {
 			System.out.println("\n Oprima la siguente tecla dependiendo de la accion que quiera realizar\n"+
 								"1.- Crear una cuenta\n"+
 								"2.- Eliminar una cuenta\n"+
-								"3.- Verificar estado de cliente");
+								"3.- Verificar estado de cliente"+
+								"4.- Depositar dinero"+
+								"5.- Girar dinero");
 			switch(lectura.nextInt()){
 				case 1:
 					crearCuenta(adminBanco);	
@@ -26,9 +28,14 @@ class Main {
 					eliminarCuenta(adminBanco);
             	break;
 				
+				case 3:
+					verificar(adminBanco);
+				break;
+				
 			}
 			System.out.print("Oprima 1 para salir, otro entero para seguir: ");
 		}
+		System.out.println("\nMuchas gracias por preferir el mejor banco del mejor pais de Chile");
   	}
 	public static void crearCuenta(Banco adminBanco){ 
 		Scanner lectura = new Scanner(System.in);
@@ -46,6 +53,13 @@ class Main {
 		System.out.println("Usted a ingresado a la opcion de eliminar cuenta: \n\n");
     	System.out.print("Indique el numero de cuenta que desea eliminar: ");
 	    adminBanco.Eliminar(lectura.nextInt());
+
+	}
+	public static void verificar(Banco adminBanco){
+		Scanner lectura = new Scanner(System.in);
+		System.out.println("Usted a ingresado la opcion de verficar estado de cliente: ");
+		System.out.print("Porfavor indique el rut que desea consultar: ");
+		adminBanco.checkClient(lectura.nextInt());
 
 	}
 

@@ -37,6 +37,17 @@ public class Banco {
 		System.out.println("Cuenta no encontrada");
 		return false;
     }
+	public boolean checkClient(int rut){
+		for(int i = 0; i<ctas.size(); i++){
+			if(ctas.get(i).Rut() == rut){
+				System.out.println("\n\nLa cuenta se encuentra afiliada: \n"+
+				ctas.get(i).toString());
+				return true;
+			}
+		}
+		System.out.println("El rut solicitado no esta afiliado a nuestro banco");
+		return false;
+	}
 	public int Numero_cuentas_saldo( float min , float max){return 0;}	
 	    // Imprime toda la informacion de las cuentas cuyo saldo
 	    // esta entre min y max ( ambos inclusive )
