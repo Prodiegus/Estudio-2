@@ -19,7 +19,9 @@ public class CuentaAhorro extends Cuenta{
         @Override
         public void Imprimir() {}
         public String toString(){
-            return "Cuenta ahorro\nNombre: "+nombre+"\nNumero de cuenta: "+numero_cuenta+"\nsaldo: "+saldo+"\n";
+            return "Cuenta ahorro\nNombre: "+nombre
+                    +"\nNumero de cuenta: "+numero_cuenta
+                    +"\nsaldo: "+saldo+"\n";
         }
     
     }
