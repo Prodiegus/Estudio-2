@@ -15,7 +15,9 @@ public class CuentaAhorro extends Cuenta{
             this.saldo-=(cantidad+cantidad*0.03);
         }
         @Override
-        public void Depositar(float cantidad) {}
+        public void Depositar(float cantidad) {
+            this.saldo+=cantidad;
+        }
         @Override
         public void Imprimir() {}
         public String toString(){
