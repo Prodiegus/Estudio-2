@@ -13,11 +13,17 @@ public class CuentaVista extends Cuenta{
         public int Numero() {return this.numero_cuenta;}
         @Override
         public void Girar(float cantidad) {
-            this.saldo-=(cantidad+300);
+            if(cantidad+300<=this.saldo && cantidad<=400000){
+                this.saldo-=(cantidad+300);
+            }else{
+                System.out.println("El giro no se ha efectuado\n\n");
+                System.out.println("Usted no cumple con las condiciones para realizar el giro");
+            }
+        
         }
         @Override
         public void Depositar(float cantidad) {
-            if(cantidad>1000000){
+            if(cantidad<1000000){
                 this.saldo+=cantidad;
             }else{
                 System.out.println("Usted excedio el limite de deposito");
